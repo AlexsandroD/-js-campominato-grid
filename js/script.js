@@ -2,81 +2,85 @@
     
     const container = document.querySelector('.container');
     const button = document.getElementById('btn');
-    let selectValue = '';
+    let risposta = scelta();
+    let classeBox = classe();
 
 
-    button.addEventListener('click', () =>{
-    selectValue = document.getElementById('level').value;
-    console.log(selectValue)
+    function scelta (num){
+        return num;
+    }
+    function classe(stile){
+        return stile;
+    }
     
-    switch(selectValue){
-        case 'easy':
-            
-            const addBox = () => {
-              
-               const node = document.createElement('div');  
-               node.className = 'box';
-                
-                return node
-            }
-            
-            for(let i = 0; i < 100; i++){
-                const item = addBox();
-                item.innerText = i + 1;
-                container.appendChild(item);
+    const addBox = () => {
+      
+       const node = document.createElement('div');  
+       node.className = classeBox;
         
-                item.addEventListener('click', function(){
-                    console.log(this);
-                    this.classList.add('active');
-                })
-            }
-        break;
-        
-        case 'medium':
-            const addBox2 = () => {
-              
-                const node = document.createElement('div');  
-                node.className = 'box2';
-                 
-                 return node
-             }
-             
-             for(let i = 0; i < 81; i++){
-                 const item = addBox2();
-                 item.innerText = i + 1;
-                 container.appendChild(item);
-         
-                 item.addEventListener('click', function(){
-                     console.log(this);
-                     this.classList.add('active');
-                 })
-             }
-        break;     
+        return node
+    }
 
-        case 'hard':
-            const addBox3 = () => {
-              
-                const node = document.createElement('div');  
-                node.className = 'box3';
-                 
-                 return node
-             }
-             
-             for(let i = 0; i < 49; i++){
-                 const item = addBox3();
-                 item.innerText = i + 1;
-                 container.appendChild(item);
-         
-                 item.addEventListener('click', function(){
-                     console.log(this);
-                     this.classList.add('active');
-                 })
-             }
-    }        
+    for(let i = 0; i < 100; i++){
+        const item = addBox();
+        item.classList.add('box')
+        item.innerText = i + 1;
+        container.append(item);
+
+        item.addEventListener('click', function(){
+            console.log(this);
+            this.classList.add('active');
+        })
+    }
+
+
+    button.addEventListener('click',  () =>{
+    const selectValue = document.getElementById('level').value;
+    container.innerHTML = '';
+    console.log(selectValue);
+
+        switch(selectValue){
+
+            case 'easy':
+            risposta = scelta(100) ;
+            console.log(risposta)
+            classeBox= classe('box');
+            break;
+
+            case 'medium':
+            risposta = scelta(81) ;
+            console.log(risposta)
+            classeBox= classe('box2');
+            break;
+            
+            
+            case 'hard':
+                risposta = scelta(49) ;
+                console.log(risposta)
+                classeBox= classe('box3')
+            break;
+                }
+    
+        
+        for(let i = 0; i < risposta; i++){
+            const item = addBox();
+            item.innerText = i + 1;
+            container.append(item);
+    
+            item.addEventListener('click', function(){
+                console.log(this);
+                this.classList.add('active');
+            })
+        }
+
+     
+    })
+
+    
 
    
-})
-
+    
+    
 
 
 
