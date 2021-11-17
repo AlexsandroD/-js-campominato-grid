@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: darkolivegreen;
+    background-color:slategrey
 }
 
 header{
@@ -36,8 +36,29 @@ header{
     width: calc(100% / 10);
     height: calc(100% / 10);
     border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.color-safe{
-    background-color: darkblue;
+.box2{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box3{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active{
+    background-color: turquoise;
 }
