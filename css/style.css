@@ -8,6 +8,21 @@ body{
     background-color: darkolivegreen;
 }
 
+header{
+    height:100px;
+    width:100%;
+    background-color: white;
+}
+
+.container-header{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .container{
     display: flex;
     flex-wrap: wrap;
@@ -18,7 +33,11 @@ body{
 }
 
 .box{
-    width: calc(100% / 8);
-    height: calc(100% / 8);
+    width: calc(100% / 10);
+    height: calc(100% / 10);
     border: 1px solid white;
+}
+
+.color-safe{
+    background-color: darkblue;
 }
